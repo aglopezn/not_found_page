@@ -1,0 +1,156 @@
+:root {
+  /* Propiedades y variables globales */
+  font-size: 16px;
+  --gradient-primary: linear-gradient(180deg, rgba(249, 168, 38, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  --bg-primary: #F9A826;
+  --bg-gray: #E4E4E4;
+  --color-shadow: 1px 1px 3px rgba(100, 100, 100, 0.8);
+}
+
+body {
+  /* configuración inicial del body */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  /* contenedor principal */
+  height: 100vh;
+  background: var(--bg-gray);
+}
+
+.flex-row {
+  /* Genera un display flex en fila */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-center-center {
+  /* centra horizontal y vertial un display flex */
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-gradient-primary{
+  /* color de fondo gradiente principal */
+  background: var(--gradient-primary);
+}
+
+.flex-item {
+  /* propiedades generales de un flex item */
+  margin: 0 2rem;
+}
+
+.not-found-title {
+  /* titulo 404 */
+  font-weight: 500;
+  font-size: 7rem;
+  margin: 0;
+  text-align: center;
+}
+
+.not-found-text {
+  /* texto del 404 */
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 20%;
+}
+
+.button {
+  /* boton general */
+  display: block;
+  text-align: center;
+  margin: 0.5rem auto;
+  height: 3rem;
+  width: 10rem;
+  line-height: 3rem;
+  text-decoration: none;
+  border-radius: 1.5rem;
+}
+
+.button:hover {
+  /* boton general hover */
+  cursor: pointer;
+}
+
+.button-primary {
+  /* boton principal */
+  background: var(--bg-primary);
+  box-shadow: var(--color-shadow);
+  color: inherit;
+  font-size: 1.25rem;
+}
+
+.button-primary:hover {
+  /* boton principal hover */
+  box-shadow: inset var(--color-shadow);
+}
+
+ #left-hand{
+   /* animacion mano izquierda del muñeco */
+  transform-origin: right;
+  transform-box: fill-box;
+  animation: move-left-hand 5s infinite;
+} 
+
+#buddy {
+  /* animacion del muñeco */
+  animation: jump-over 5s infinite ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Inicio de keyframes */
+@keyframes move-left-hand{
+  0% {
+    transform: rotateZ(-12deg);
+  }
+  20% {
+    transform: rotateZ(-12deg);
+  }
+
+  60% {
+    transform: rotateZ(12deg);
+  }
+
+  100% {
+    transform: rotateZ(-12deg);
+  }
+}
+
+@keyframes jump-over {
+  0% {
+    transform: rotateZ(0);
+  }
+  20%, 100% {
+    transform: rotateZ(360deg);
+  }
+}
+/* Fin de keyframes */
+
+/* Inicio media queries */
+@media screen and (max-width: 768px){
+  .flex-item svg {
+    width: 300px;
+    height: calc(300px/1.6);
+  }
+
+  .not-found-text {
+    padding: 0;
+    font-size: 1.5rem;
+  }
+
+  .not-found-title {
+    font-size: 4rem;
+  }
+
+  .button-primary {
+    font-size: 1rem;
+  }
+
+}
+/* Fin media queries */
